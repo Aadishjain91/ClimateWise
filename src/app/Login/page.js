@@ -2,13 +2,13 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { auth, provider } from './firebase';
+import { auth, provider } from './firebase/firebase';
 import { signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 
 const Login = () => {
     const router = useRouter();
-    
+
     const handleLogin = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
