@@ -2,10 +2,9 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { auth, provider } from './firebase/firebase';
+import { auth, provider } from './firebase';
 import { signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import Navbar from './Components/Navbar/Navbar';
 
 const Login = () => {
     const router = useRouter();
@@ -28,8 +27,6 @@ const Login = () => {
     };
 
     return (
-      <>
-      <Navbar/>
         <Box display={"flex"} height={"100vh"} justifyContent={"center"} alignItems={'center'}>
             <Box display="flex" bgcolor={"white"} flexDirection="column" justifyContent={"center"} boxShadow={'0 4px 8px 0 rgba(0,0,0,0.2)'} alignItems="center" mt={8} padding={"50px"} border={"1px solid black"} borderRadius={"10px"}>
                 <Typography variant="h4" gutterBottom>
@@ -49,7 +46,6 @@ const Login = () => {
                 </Button>
             </Box>
         </Box>
-        </>
     );
 };
 
